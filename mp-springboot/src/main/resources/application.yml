@@ -1,0 +1,17 @@
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///java_base?serverTimezone=UTC
+    username: root
+    password: root
+
+all:
+  url: http://127.0.0.1:8081
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 9090

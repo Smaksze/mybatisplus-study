@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="jdbc.properties" />
+
+    <typeAliases>
+        <package name="com.sms.mp.pojo"/>
+    </typeAliases>
+
+
+    <!--<typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="com.sms.mybatis.pojo.UserLevel"></typeHandler>
+    </typeHandlers>-->
+
+
+    <environments default="mysql"><!-- 默认采用的环境 -->
+        <environment id="mysql"> <!-- 环境的名称 -->
+            <!--配置事务管理 -->
+            <transactionManager type="JDBC" />
+            <!-- 数据源采用的是连接池技术 POOLED:mybatis自带的数据源 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="StudentMapper.xml"></mapper>
+        <!-- 要求接口名和xml名一致,同在一个包下 -->
+        <!--<package name="com.sms.mybatis.mapper"></package>-->
+    </mappers>
+</configuration>
