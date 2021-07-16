@@ -22,7 +22,7 @@ public class CommunityManage {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 主键id
+     * 主键
      */
     private Integer communityManageId;
 
